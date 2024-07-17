@@ -1,0 +1,12 @@
+name: Testing_Xray
+steps:
+  - name: test
+    type: Bash
+    configuration:
+      integrations:
+        - name: jfrogPat
+    execution:
+      onExecute:
+        - touch test.txt
+        - echo "Hello World" > test.txt
+        - jfrog scan test.txt
