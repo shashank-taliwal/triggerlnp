@@ -1,0 +1,13 @@
+pipelines:
+  - name: monitor_pipelines_test
+    configuration:
+      jfrogCliVersion: 2
+      chronological: true
+    steps:
+      - name: monitor_pipelines_test_step
+        type: Bash
+        configuration:
+          timeoutSeconds: 300
+        execution:
+          onExecute:
+            - echo "Testing"
